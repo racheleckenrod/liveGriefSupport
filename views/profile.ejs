@@ -1,4 +1,88 @@
 <%- include('partials/header') -%>
+<!-- Main -->
+<section id="main" class="wrapper style2">
+  <div class="title">Welcome Back, <%= user.userName %></div>
+  <div class="container">
+
+    <!-- Image -->
+    <div class="container">
+    <div class="col-1 col-6-medium">
+      <div class="col-6">
+      <section class="highlight">
+      <a href="#" class="image fit featured">
+        <img class="image fit featured" src="<%= user.profilePicture%>" alt="profile picture" />
+      </a>
+      </section>
+      </div>
+    </div>
+    </div>
+
+    <!-- Features -->
+      <section id="features">
+        <header class="style1">
+          <h2><%= user.greeting%></h2>
+          <p>Please enjoy your visit.</p>
+        </header>
+       
+        <ul class="actions special">
+          <li><a href="#" class="button style1 large">Get Started</a></li>
+          <li><a href="#" class="button style2 large">More Info</a></li>
+        </ul>
+      </section>
+
+  </div>
+</section>
+
+<!-- Highlights -->
+<section id="highlights" class="wrapper style3">
+  <div class="title">In Loving Memory</div>
+  <div class="container">
+    <div class="row aln-center">
+      
+       
+          <% for(var i=0; i<posts.length; i++) {%>
+            <div class="col-4 col-12-medium">
+            <section class="highlight">
+            <li class="">
+              <a href="/post/<%= posts[i]._id%>">
+                <img class="image fit featured" src="<%= posts[i].image%>">
+              </a>
+            </li>
+         
+          <h3><a href="#"><%=`${posts[i].title}`%></a></h3>
+          <p><%=`${posts[i].caption}`%></p>
+          <ul class="actions">
+            <li><a href="#" class="button style1">Comment</a></li>
+          </ul>
+        </section>
+      </div>
+          <% } %>
+       
+      </div>
+      <!-- <div class="col-4 col-12-medium">
+        <section class="highlight">
+          <a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+          <h3><a href="#">Nisl adipiscing sed lorem</a></h3>
+          <p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+          <ul class="actions">
+            <li><a href="#" class="button style1">Learn More</a></li>
+          </ul>
+        </section>
+      </div>
+      <div class="col-4 col-12-medium">
+        <section class="highlight">
+          <a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+          <h3><a href="#">Mattis tempus lorem</a></h3>
+          <p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+          <ul class="actions">
+            <li><a href="#" class="button style1">Learn More</a></li>
+          </ul>
+        </section>
+      </div> -->
+    </div>
+  </div>
+</section>
+
 <div class="container">
   <div class="row mt-5">
       <div class="col-6">
@@ -27,7 +111,7 @@
           </div>
       </div>
       <div class="">
-        <ul class="">
+        <!-- <ul class="">
         <% for(var i=0; i<posts.length; i++) {%>
           <li class="">
             <a href="/post/<%= posts[i]._id%>">
@@ -35,7 +119,7 @@
             </a>
           </li>
         <% } %>
-        </ul>
+        </ul> -->
         <div class="">
           <a class="button style2 large" href="/feed">Return to Feed</a>
         </div>  

@@ -1440,9 +1440,9 @@ input, select, textarea {
 /* Section/Article */
 
 	section,
-	article {
-		margin: 0 0 4em 0;
-	}
+	/* article { */
+		/* margin: 0 0 4em 0; */
+	/* } */
 
 	section > :last-child,
 	article > :last-child,
@@ -1648,6 +1648,7 @@ input, select, textarea {
 		min-width: 12em;
 		height: 4em;
 		line-height: 4em;
+		margin: 2em 0 2em 0;
 	}
 
 		input[type="button"]:hover,
@@ -2454,6 +2455,7 @@ input, select, textarea {
 
 			#intro {
 				padding-bottom: 7em;
+				margin-bottom: 0;
 			}
 
 				#intro p.style1 {
@@ -2805,7 +2807,7 @@ input, select, textarea {
 				width: 100%;
 				font-size: 1em;
 				max-width: 30em;
-				margin: 0 auto;
+				/* margin: 0 auto; */
 			}
 
 		/* Actions */
