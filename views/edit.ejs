@@ -1,8 +1,10 @@
 <%- include('partials/header') -%>
+<section id="highlights" class="wrapper style3">
+  <div class="title">Edit Post</div>
 <div class="container">
   <div class="row justify-content-center mt-5">
     <div class="card p-5">
-      <h2><%= post.title %></h2>
+      <h1><%= post.title %></h1>
       <img class="img-fluid" src="<%= post.image%>" />
       <div class="row p-5 justify-content-between">
         <form
@@ -10,7 +12,7 @@
           action="/post/likePost/<%= post.id %>?_method=PUT"
           method="POST"
         >
-          <button class="btn btn-danger fa fa-heart" type="submit"></button>
+          <button class="btn style1 fa fa-heart" type="submit"></button>
         </form>
         <h3 class="col-3">Likes: <%= post.likes %></h3>
         <%if(post.user == user.id){ %>
@@ -19,14 +21,13 @@
           method="POST"
           class="col-3"
         >
-          <button class="btn btn-primary fa fa-trash" type="submit"></button>
+          <button class="btn style2 fa fa-trash" type="submit"></button>
         </form>
         <form
         action="/post/editPostPage/<%= post.id %>"
-      
         class="col-3"
-      >
-        <button class="btn btn-primary  fa-user-pen" type="submit">edit</button>
+        >
+        <button class="btn style3" type="submit">edit</button>
       </form>
 
 
@@ -37,6 +38,9 @@
         <p><%= post.caption %></p>
       </div>
   </div>
+
+
+
 
  <div class="mt-5">
     <h2>Edit your post</h2>
@@ -62,5 +66,8 @@
     <a href="/logout" class=" btn btn-primary ">Logout</a>
     <div class="py-5"></div>
   </div>
+</div>
+</div>
+</section>
 
 <%- include('partials/footer') -%>
