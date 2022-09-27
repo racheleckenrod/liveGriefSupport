@@ -9,9 +9,11 @@ const io = require("socket.io")(2899, {
   methods: ["GET", "POST"]
 }
 });
+
+// Testing comment on dev branch
 // const io = require("socket.io")(httpServer, {
 //   cors: {
-//     origin: "http://localhost:2899",
+//     origin: "http://live-grief-support.herokuapp.com",
 //     methods: ["GET", "POST"]
 //   }
 // });
