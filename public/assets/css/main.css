@@ -1750,9 +1750,6 @@ input, select, textarea {
 		list-style: disc;
 		padding-left: 1em;
 	}
-	ul li::marker {
-		color:red !important;
-	}
 
 		ul li {
 			padding-left: 0.5em;
