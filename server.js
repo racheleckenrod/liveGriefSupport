@@ -3,9 +3,13 @@ const app = express();
 const cors = require('cors')
 const path = require("path");
 const http = require("http");
-const io = require("socket.io")(2899, {
+require("dotenv").config({ path: "./config/.env" });
+const PORT = process.env.PORT;
+const PORT2 = process.env.PORT2;
+app.use(cors())
+const io = require("socket.io")(PORT2, {
   cors: {
-  origin: "http://localhost:3333",
+  origin: `http://localhost:${process.env.PORT}`,
   methods: ["GET", "POST"]
 }
 });
@@ -34,10 +38,11 @@ const commentRoutes = require("./routes/comments");
 const chatRoutes = require("./routes/chat")
 
 
+
 // From Heroku:
 // const { Server } = require('ws');
 
-const PORT = process.env.PORT ;
+// const PORT = process.env.PORT ;
 // const INDEX = '/index.html';
 
 // const server = express()  
@@ -61,7 +66,7 @@ setInterval(() => io.emit('time', "about time"), 1000)
 setInterval(() => io.emit('timeData', new Date().toTimeString()), 1000);
 
 //Use .env file in config folder
-require("dotenv").config({ path: "./config/.env" });
+
 
 // Passport config
 require("./config/passport")(passport);
@@ -69,7 +74,7 @@ require("./config/passport")(passport);
 //Connect To Database
 connectDB();
 
-app.use(cors())
+
 
 //Using EJS for views
 app.set("view engine", "ejs");
