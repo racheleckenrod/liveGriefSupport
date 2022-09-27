@@ -12,3 +12,16 @@ module.exports = {
       }
     }
 }
+
+
+  // getFeed: async (req, res) => {
+  //   try {
+  //     const posts = await Post.find().populate('user').sort({ createdAt: "desc" }).lean();
+  //     const comments = await Comment.find().sort({ createdAt: "asc" }).lean()
+
+  //     res.render("feed.ejs", { posts: posts, comments: comments });
+  //     console.log(comments, posts)
+  //   } catch (err) { 
+  //     console.log(err);
+  //   }
+  // }:
