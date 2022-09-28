@@ -1,4 +1,4 @@
-const socket = io('http://localhost:2899')
+const socket = io(`http://localhost:${process.env.PORT2}`)
 
 let timeClock 
 

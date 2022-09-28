@@ -3,13 +3,14 @@ const app = express();
 const cors = require('cors')
 const path = require("path");
 const http = require("http");
-const io = require("socket.io")(2899, {
-  cors: {
-  origin: "http://localhost:3333",
-  methods: ["GET", "POST"]
-}
-});
+require("dotenv").config({ path: "./config/.env" });
+const PORT = process.env.PORT;
+
+app.use(cors())
+
+=======
 // Testing comments on newMain 
+
 // const io = require("socket.io")(httpServer, {
 //   cors: {
 //     origin: "http://localhost:2899",
@@ -34,31 +35,8 @@ const chatRoutes = require("./routes/chat")
 
 
 
-// From Heroku:
-// const { Server } = require('ws');
 
-const PORT = process.env.PORT ;
-// const INDEX = '/index.html';
 
-// const server = express()  
-// we already have const app = express(), so will try to use that instead of creating another variable set to the same thing. see github.com/heroku-examples/node-websockets/blob/main/server.js
-
-// app.use((req, res) => res.sendFile('chat/room.ejs', {root: __dirname }))
-
-// create a Socket.io server
-// const server = http.createServer(app);
-// const io = socketio(server);
-
-// handle connections
-io.on('connection', socket => {
-  console.log('Client connected', new Date().toTimeString());
-  socket.emit('timeClock', "It's about time");
-  socket.on('disconnect', () => console.log('Client disconnected'));
-});
-
-// broadcast updates
-setInterval(() => io.emit('time', "about time"), 1000)
-setInterval(() => io.emit('timeData', new Date().toTimeString()), 1000);
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -78,7 +56,6 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 // server.use(express.static("public"))
 
-app.set('socketio', io);
 
 //Body Parsing
 app.use(express.urlencoded({ extended: true }));
