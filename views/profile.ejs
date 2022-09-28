@@ -1,4 +1,153 @@
 <%- include('partials/header') -%>
+
+
+
+			<!-- Main -->
+      <section id="main" class="wrapper style2">
+        <div class="title">Welcome Back, <%= user.userName %></div>
+        <div class="container">
+          <div class="row gtr-150">
+            <div class="col-8 col-12-medium">
+
+              <!-- Content -->
+                <div id="content">
+                  <article class="box post">
+                    <header class="style1">
+                      <h2><%= user.greeting%></h2>
+                      <p>Please enjoy your visit. The greeting above is customizable.</p>
+                    </header>
+                    <a href="#" class="image featured">
+                      <img src="<%= user.profilePicture%>" alt="profile picture" />
+                    </a>
+                    <p>My Story.
+                      
+                    Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felisagittis eget.
+                    odio eleifend. Duis commodo fringilla commodo. Aliquam erat volutpat. Vestibulum
+                    facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
+                    tempus euismod. Vestibulum ante ipsum primis in faucibus.</p>
+                    <p>Phasellus nisl nisl, varius id porttitor sed, pellentesque ac orci. Pellentesque
+                    habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi
+                    bibendum justo sed mauris vehicula malesuada aliquam elit imperdiet. Aliquam eu nibh
+                    lorem, eget gravida mi. Duis odio diam, luctus et vulputate vitae, vehicula ac dolor.
+                    Pellentesque at urna eget tellus lobortis ultrices sed non erat. Donec eget erat non
+                    magna volutpat malesuada quis eget eros. Nullam sodales cursus sapien, id consequat
+                    leo suscipit ut. Praesent id turpis vitae turpis pretium ultricies. Vestibulum sit
+                    amet risus elit.</p>
+                    <p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
+                    ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
+                    eget quam rutrum bibendum. Proin pellentesque diam non ligula commodo tempor. Vivamus
+                    eget urna nibh. Curabitur non fringilla nisl. Donec accumsan interdum nisi, quis
+                    tincidunt felis sagittis eget. Donec elementum ligula dignissim sem pulvinar non semper
+                    odio eleifend. Duis commodo fringilla commodo. Aliquam erat volutpat. Vestibulum
+                    facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
+                    tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+                    posuere cubilia.</p>
+                    <p>Phasellus nisl nisl, varius id porttitor sed, pellentesque ac orci. Pellentesque
+                    habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi
+                    bibendum justo sed mauris vehicula malesuada aliquam elit imperdiet. Aliquam eu nibh
+                    lorem, eget gravida mi. Duis odio diam, luctus et vulputate vitae, vehicula ac dolor.
+                    Pellentesque at urna eget tellus lobortis ultrices sed non erat. Donec eget erat non
+                    magna volutpat malesuada quis eget eros. Nullam sodales cursus sapien, id consequat
+                    leo suscipit ut. Praesent id turpis vitae turpis pretium ultricies. Vestibulum sit
+                    amet risus elit.</p>
+                  </article>
+                  <div class="row gtr-150">
+                    <div class="col-6 col-12-small">
+                      <section class="box">
+                        <header>
+                          <h2>About me:</h2>
+                        </header>
+                        <a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+                        <p>Rutrum bibendum. Proin pellentesque diam non ligula commodo tempor. Vivamus
+                        eget urna nibh. Curabitur non fringilla nisl. Donec accumsan interdum nisi, quis
+                        tempus.</p>
+                        <a href="#" class="button style1">More</a>
+                      </section>
+                    </div>
+                    <div class="col-6 col-12-small">
+                      <section class="box">
+                        <header>
+                          <h2>Magna pulvinar tempus</h2>
+                        </header>
+                        <a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+                        <p>Rutrum bibendum. Proin pellentesque diam non ligula commodo tempor. Vivamus
+                        eget urna nibh. Curabitur non fringilla nisl. Donec accumsan interdum nisi, quis
+                        tempus.</p>
+                        <a href="#" class="button style1">More</a>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+            <div class="col-4 col-12-medium">
+
+              <!-- Sidebar -->
+                <div id="sidebar">
+                  <section class="box">
+                    <header>
+                      <h2>About Me:</h2>
+                    </header>
+                    <p>Please use this space to tell us a little bit about yourself. Once the user fills out the form here, they will see an edit/update button instead. If another user visits your profile page, they will not see the button. </p>
+                    <a href="#" class="button style1">Submit</a>
+                  </section>
+                  <section class="box">
+                    <header>
+                      <h2>My Most Liked Posts</h2>
+                    </header>
+                    <ul class="style2">
+                      <li>
+                        <article class="box post-excerpt">
+                          <a href="#" class="image left"><img src="<%= likedPosts[0].image %>" alt="" /></a>
+                          <h3><a href="#"><%= likedPosts[0].title%></a></h3>
+                          <p><%= likedPosts[0].caption %></p>
+                        </article>
+                      </li>
+                      <li>
+                        <article class="box post-excerpt">
+                          <a href="#" class="image left"><img src="<%= likedPosts[1].image %>" alt="" /></a>
+                          <h3><a href="#"><%= likedPosts[1].title%></a></h3>
+                          <p><%= likedPosts[1].caption %></p>
+                        </article>
+                      </li>
+                      <li>
+                        <article class="box post-excerpt">
+                          <a href="#" class="image left"><img src="<%= likedPosts[2].image %>" alt="" /></a>
+                          <h3><a href="#"><%= likedPosts[1].title%></a></h3>
+                          <p><%= likedPosts[2].caption %></p>
+                        </article>
+                      </li>
+                    </ul>
+                    <a href="#" class="button style1">Archives</a>
+                  </section>
+                  <section class="box">
+                    <header>
+                      <h2>My Story Evolves Over Time</h2>
+                    </header>
+                    <ul class="style3">
+                      <li><a href="#">Nulla iaculis egestas varius</a></li>
+                      <li><a href="#">Augue massa feugiat quam pretium</a></li>
+                      <li><a href="#">Orci sem vel libero cras nisi odio</a></li>
+                      <li><a href="#">Sed hendrerit massa nam mattis</a></li>
+                      <li><a href="#">Turpis vel leo accumsan aliquet</a></li>
+                      <li><a href="#">Dapibus mi fermentum fusce non</a></li>
+                      <li><a href="#">Arcu laoreet sapien tempus</a></li>
+                      <li><a href="#">Nulla iaculis egestas varius</a></li>
+                      <li><a href="#">Augue massa feugiat quam pretium</a></li>
+                      <li><a href="#">Orci sem vel libero cras nisi odio</a></li>
+                      <li><a href="#">Sed hendrerit massa nam mattis</a></li>
+                    </ul>
+                  </section>
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
 <!-- Main -->
 <section id="main" class="wrapper style2">
   <div class="title">Welcome Back, <%= user.userName %></div>
@@ -52,7 +201,7 @@
           <h3><a href="#"><%=`${posts[i].title}`%></a></h3>
           <p><%=`${posts[i].caption}`%></p>
           <ul class="actions">
-            <li><a href="#" class="button style1">Comment</a></li>
+            <li><a href="/post/<%= posts[i]._id %>" class="button style1">Comment</a></li>
           </ul>
         </section>
       </div>
@@ -83,48 +232,51 @@
   </div>
 </section>
 
-<div class="container">
-  <div class="row mt-5">
-      <div class="col-6">
-          <div>
-              <p><strong>User Name</strong>: <%= user.userName %></p>
-              <p><strong>Email</strong>: <%= user.email %></p>
-              <a href="/logout" class=" btn btn-primary ">Logout</a>
+<section id="highlights" class="wrapper style2">
+  <div class="title">Create New Post</div>
+    <div class="container">
+
+      
+        <div class="row mt-5">
+            <div class="col-6">
+                <div>
+                    <p><strong>User Name</strong>: <%= user.userName %></p>
+                    <p><strong>Email</strong>: <%= user.email %></p>
+                    
+                </div>
+                <div class="mt-5">
+                  <h2>Add a post</h2>
+                  <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="title" name="title">
+                    </div>
+                    <div class="mb-3">
+                      <label for="caption" class="form-label">Caption</label>
+                      <textarea class="form-control" id="caption" name="caption"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="imgUpload" class="form-label">Image</label>
+                      <input type="file" class="form-control" id="imageUpload" name="file">
+                    </div>
+                    <div class=""></div>
+                    <div class="">
+                    <button type="submit" class="button style1 large" value="Upload">Submit</button>
+                    <div class=""></div>
+                    <a href="/logout" class="button style1 large ">Logout</a>
+                    </div>
+                  </form>
+                </div>
+            </div>
+            <div class="">
+              <div class="">
+                <a class="button style3 large" href="/feed">Return to Feed</a>
+              </div>  
+            </div>  
           </div>
-          <div class="mt-5">
-            <h2>Add a post</h2>
-            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
-              <div class="mb-3">
-                  <label for="title" class="form-label">Title</label>
-                  <input type="text" class="form-control" id="title" name="title">
-              </div>
-              <div class="mb-3">
-                <label for="caption" class="form-label">Caption</label>
-                <textarea class="form-control" id="caption" name="caption"></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="imgUpload" class="form-label">Image</label>
-                <input type="file" class="form-control" id="imageUpload" name="file">
-              </div>
-              <button type="submit" class="button style1 large" value="Upload">Submit</button>
-            </form>
-          </div>
-      </div>
-      <div class="">
-        <!-- <ul class="">
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="image fit featured" src="<%= posts[i].image%>">
-            </a>
-          </li>
-        <% } %>
-        </ul> -->
-        <div class="">
-          <a class="button style2 large" href="/feed">Return to Feed</a>
-        </div>  
-      </div>  
+        </div>
+      
+  
     </div>
-  </div>
-</div>
+</section>
 <%- include('partials/footer') -%>
