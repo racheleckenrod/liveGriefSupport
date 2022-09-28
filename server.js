@@ -8,6 +8,9 @@ const PORT = process.env.PORT;
 
 app.use(cors())
 
+
+// Testing comments on newMain 
+
 // const io = require("socket.io")(httpServer, {
 //   cors: {
 //     origin: "http://localhost:2899",
@@ -34,8 +37,9 @@ const chatRoutes = require("./routes/chat")
 
 
 
-//Use .env file in config folder
 
+//Use .env file in config folder
+require("dotenv").config({ path: "./config/.env" });
 
 // Passport config
 require("./config/passport")(passport);
@@ -43,7 +47,7 @@ require("./config/passport")(passport);
 //Connect To Database
 connectDB();
 
-
+app.use(cors())
 
 //Using EJS for views
 app.set("view engine", "ejs");

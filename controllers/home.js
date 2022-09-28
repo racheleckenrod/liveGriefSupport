@@ -13,6 +13,8 @@ module.exports = {
     }
 }
 
+
+
   // getFeed: async (req, res) => {
   //   try {
   //     const posts = await Post.find().populate('user').sort({ createdAt: "desc" }).lean();
@@ -24,3 +26,4 @@ module.exports = {
   //     console.log(err);
   //   }
   // }:
+
