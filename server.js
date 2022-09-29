@@ -11,15 +11,7 @@ app.use(cors())
 
 // Testing comments on newMain 
 
-// const io = require("socket.io")(httpServer, {
-//   cors: {
-//     origin: "http://localhost:2899",
-//     methods: ["GET", "POST"]
-//   }
-// });
 
-// httpServer.listen(3000);
-// const formatMessage = require("./utils/messages");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const session = require("express-session");
