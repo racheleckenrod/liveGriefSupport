@@ -14,27 +14,15 @@
 		sizes="32x32"
 		href="images/favicon.png"  />
 		<meta charset="utf-8" />
-        <!-- <link
+        <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
             integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
             crossorigin="anonymous"
-        /> -->
+        />
 		<link rel="stylesheet" href="/assets/css/main.css" />
 		<link rel="stylesheet" href="/assets/css/style.css" />
-        <!-- <script src="/socket.io/socket.io.js"></script> -->
-
-        <script defer src="http://localhost:2899/socket.io/socket.io.js"></script>
-        <script defer src="script.js"></script>
-        <!-- <script>
-            let socket = io();
-            let el;
-
-            socket.on('time', (timeString) => {
-                el = document.getElementById('server-time');
-                el.innerHTML = 'Server time: ' + timeString;
-            });
-          </script> -->
+       
 	</head>
 	<body class="homepage">
 		<div id="page-wrapper">
@@ -56,22 +44,22 @@
 									<ul>
 										<li><a href="/chat/room">I have lost a child.</a></li>
 										<li><a href="/chat/room">I have lost a parent.</a></li>
-										<li><a href="#">I have lost my spouse/partner.</a></li>
-										<li><a href="#">I have lost a sibling.</a></li>
-										<li><a href="#">I have lost a friend</a></li>
-										<li><a href="#">I have lost someone to suicide.</a></li>
-										<li><a href="#">I have a terminal diagnosis.</a></li>
+										<li><a href="/chat/room">I have lost my spouse/partner.</a></li>
+										<li><a href="/chat/room">I have lost a sibling.</a></li>
+										<li><a href="/chat/room">I have lost a friend</a></li>
+										<li><a href="/chat/room">I have lost someone to suicide.</a></li>
+										<li><a href="/chat/room">I have a terminal diagnosis.</a></li>
 										<li>
-											<a href="#">Community tragedy.</a>
+											<a href="/chat/room">Community tragedy.</a>
 											<ul>
-												<li><a href="#">Natural Disaster</a></li>
-												<li><a href="#">Act of Human Violence</a></li>
-												<li><a href="#">Global Pandemic</a></li>
-												<li><a href="#">Poverty</a></li>
-												<li><a href="#">War</a></li>
+												<li><a href="/chat/room">Natural Disaster</a></li>
+												<li><a href="/chat/room">Act of Human Violence</a></li>
+												<li><a href="/chat/room">Global Pandemic</a></li>
+												<li><a href="/chat/room">Poverty</a></li>
+												<li><a href="/chat/room">War</a></li>
 											</ul>
 										</li>
-										<li><a href="#">My grief is different</a></li>
+										<li><a href="/chat/room">My grief is different</a></li>
 										
 									</ul>
 								</li>
@@ -84,115 +72,141 @@
 
 				</section>
          </div>
-    </body>
-</html>
+
             
 
-<section id="main" class="wrapper style2">
-    <div class="title">Chat Room</div>
-    <div class="container">
+            <section id="main" class="wrapper style2">
+                <div class="title">Chat Room</div>
+                <div class="container">
 
-
-
-    </div>
-</section>
-
-
-
-
-
-
-<!-- Footer -->
-
-<section id="footer" class="wrapper">
-    <div class="title">Our Sponsors</div>
-    <div class="container">
-        <header class="style1">
-            <h2>Looking to be in touch with us?</h2>
-            <p>
-                We value and appreciate you.
-            </p>
-        </header>
-        <div class="row">
-            <div class="col-6 col-12-medium">
-
-                <!-- Contact Form -->
-                    <section>
-                        <form method="post" action="#">
-                            <div class="row gtr-50">
-                                <div class="col-6 col-12-small">
-                                    <input type="text" name="name" id="contact-name" placeholder="Name" />
-                                </div>
-                                <div class="col-6 col-12-small">
-                                    <input type="text" name="email" id="contact-email" placeholder="Email" />
-                                </div>
-                                <div class="col-12">
-                                    <textarea name="message" id="contact-message" placeholder="Message" rows="4"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <ul class="actions">
-                                        <li><input type="submit" class="style1" value="Send" /></li>
-                                        <li><input type="reset" class="style2" value="Reset" /></li>
-                                    </ul>
-                                </div>
+                    <body>
+                        <div class="chat-container">
+                          <header class="chat-header">
+                            <h1><i class="fas fa-heart-broken"></i> Grief Support</h1>
+                            <a id="leave-btn" class="btn">Leave Room</a>
+                          </header>
+                          <main class="chat-main">
+                            <div class="chat-sidebar">
+                              <h3><i class="fas fa-dove"></i> Room Name:</h3>
+                              <h2 id="room-name"></h2>
+                              <h3><i class="fas fa-hand-holding-heart"></i> Group Members</h3>
+                              <ul id="users"></ul>
                             </div>
-                        </form>
-                    </section>
-
-            </div>
-            <div class="col-6 col-12-medium">
-
-                <!-- Contact -->
-                    <section class="feature-list small">
-                        <div class="row">
-                            <div class="col-6 col-12-small">
-                                <section>
-                                    <h3 class="icon solid fa-home">Mailing Address</h3>
-                                    <p>
-                                        Untitled Corp<br />
-                                        1234 Somewhere Rd<br />
-                                        Nashville, TN 00000
-                                    </p>
-                                </section>
-                            </div>
-                            <div class="col-6 col-12-small">
-                                <section>
-                                    <h3 class="icon solid fa-comment">Social</h3>
-                                    <p>
-                                        <a href="#">@untitled-corp</a><br />
-                                        <a href="#">linkedin.com/untitled</a><br />
-                                        <a href="#">facebook.com/untitled</a>
-                                    </p>
-                                </section>
-                            </div>
-                            <div class="col-6 col-12-small">
-                                <section>
-                                    <h3 class="icon solid fa-envelope">Email</h3>
-                                    <p>
-                                        <a href="#">info@untitled.tld</a>
-                                    </p>
-                                </section>
-                            </div>
-                            <div class="col-6 col-12-small">
-                                <section>
-                                    <h3 class="icon solid fa-phone">Phone</h3>
-                                    <p>
-                                        (000) 555-0000
-                                    </p>
-                                </section>
-                            </div>
+                            <div class="chat-messages"></div>
+                          </main>
+                          <div class="chat-form-container">
+                            <form id="chat-form">
+                              <input
+                                id="msg"
+                                type="text"
+                                placeholder="Enter Message"
+                                required
+                                autocomplete="off"
+                              />
+                              <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+                            </form>
+                          </div>
                         </div>
-                    </section>
+                    </body>
+                </div>
+            </section>
 
-            </div>
-        </div>
-        <div id="copyright">
-            <ul>
-                <li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-            </ul>
-        </div>
-    </div>
-</section>
+
+
+
+
+
+            <!-- Footer -->
+
+            <section id="footer" class="wrapper">
+                <div class="title">Our Sponsors</div>
+                <div class="container">
+                    <header class="style1">
+                        <h2>Looking to be in touch with us?</h2>
+                        <p>
+                            We value and appreciate you.
+                        </p>
+                    </header>
+                    <div class="row">
+                        <div class="col-6 col-12-medium">
+
+                            <!-- Contact Form -->
+                                <section>
+                                    <form method="post" action="#">
+                                        <div class="row gtr-50">
+                                            <div class="col-6 col-12-small">
+                                                <input type="text" name="name" id="contact-name" placeholder="Name" />
+                                            </div>
+                                            <div class="col-6 col-12-small">
+                                                <input type="text" name="email" id="contact-email" placeholder="Email" />
+                                            </div>
+                                            <div class="col-12">
+                                                <textarea name="message" id="contact-message" placeholder="Message" rows="4"></textarea>
+                                            </div>
+                                            <div class="col-12">
+                                                <ul class="actions">
+                                                    <li><input type="submit" class="style1" value="Send" /></li>
+                                                    <li><input type="reset" class="style2" value="Reset" /></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </section>
+
+                        </div>
+                        <div class="col-6 col-12-medium">
+
+                            <!-- Contact -->
+                                <section class="feature-list small">
+                                    <div class="row">
+                                        <div class="col-6 col-12-small">
+                                            <section>
+                                                <h3 class="icon solid fa-home">Mailing Address</h3>
+                                                <p>
+                                                    Untitled Corp<br />
+                                                    1234 Somewhere Rd<br />
+                                                    Nashville, TN 00000
+                                                </p>
+                                            </section>
+                                        </div>
+                                        <div class="col-6 col-12-small">
+                                            <section>
+                                                <h3 class="icon solid fa-comment">Social</h3>
+                                                <p>
+                                                    <a href="#">@untitled-corp</a><br />
+                                                    <a href="#">linkedin.com/untitled</a><br />
+                                                    <a href="#">facebook.com/untitled</a>
+                                                </p>
+                                            </section>
+                                        </div>
+                                        <div class="col-6 col-12-small">
+                                            <section>
+                                                <h3 class="icon solid fa-envelope">Email</h3>
+                                                <p>
+                                                    <a href="#">info@untitled.tld</a>
+                                                </p>
+                                            </section>
+                                        </div>
+                                        <div class="col-6 col-12-small">
+                                            <section>
+                                                <h3 class="icon solid fa-phone">Phone</h3>
+                                                <p>
+                                                    (000) 555-0000
+                                                </p>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </section>
+
+                        </div>
+                    </div>
+                    <div id="copyright">
+                        <ul>
+                            <li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
 
 
@@ -209,7 +223,7 @@
         <script src="/assets/js/breakpoints.min.js"></script>
         <script src="/assets/js/util.js"></script>
         <script src="/assets/js/main.js"></script>
-        <!-- <script src="/socket.io/socket.io.js"></script>
-        <script src="scripts.js"></script> -->
+        <!-- <script src="/socket.io/socket.io.js"></script> -->
+        <!-- <script src="scripts.js"></script> -->
     </body>
 </html>

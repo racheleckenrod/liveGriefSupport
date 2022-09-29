@@ -6,7 +6,9 @@ const UserSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   password: String,
   greeting: { type: String, default: "We can honor our dead by living our best lives." },
-  profilePicture: {type: String, default: "https://source.unsplash.com/random/?flowers"}
+  profilePicture: {type: String, default: "https://source.unsplash.com/random/?flowers"},
+  about: String,
+  story: String
 });
 
 // Password hash middleware.
