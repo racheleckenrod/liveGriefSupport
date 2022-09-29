@@ -1,0 +1,208 @@
+<%- include('partials/header') -%>
+
+
+
+			<!-- Main -->
+      <section id="main" class="wrapper style2">
+        <div class="title">Welcome, <%= user.userName %></div>
+        <div class="container">
+          <div class="row gtr-150">
+            <div class="col-8 col-12-medium">
+
+              <!-- Content -->
+                <div id="content">
+                  <article class="box post">
+                    <header class="style1">
+                      <h2><%= user.greeting%></h2>
+                      <p>Please enjoy your visit. The greeting above is customizable.</p>
+                    </header>
+                    <a href="#" class="image featured">
+                      <img src="<%= user.profilePicture%>" alt="profile picture" />
+                    </a>
+                    <p>My Story.
+                      
+                    After spending most of my life at this point, without my child alive on Earth, I have put together a site that I hope can bring you great comfort in your times of need, and joy in celebrating with others successes we can share. It is my hope that you are supported when you need it most, and don't need to have a reason to connect deeply with those who can offer a safe and supportive envirnment. Please be aware that being a member of this community is a privilege, and we expect you to follow certain rules in order to participate. Kindness is mandatory. As is maintaining respect for others as well as yourself. If you ever feel bullied or experience abuse, we want to know about it right away. We will make every effort to keep this an emotionally safe space.</p>
+                    <p>May you find compassionate understanding here and enjoy sharing memories of your loved ones, as you offer yourself to those who have an understanding of your losses. May we learn to support each other.</p>
+                    <p>Please take a moment and tell us about yourself.</p>
+                    <p></p>
+                  </article>
+                  <!-- Contact Form -->
+                  <section>
+                    <form method="post" action="#">
+                        <div class="row gtr-50">
+                            <div class="col-6 col-12-small">
+                                <input type="text" name="name" id="contact-name" placeholder="Name" />
+                            </div>
+                            <div class="col-6 col-12-small">
+                                <input type="text" name="email" id="contact-email" placeholder="Email" />
+                            </div>
+                            <div class="col-12">
+                                <textarea name="message" id="contact-message" placeholder="Message" rows="4"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <ul class="actions">
+                                    <li><input type="submit" class="style1" value="Send" /></li>
+                                    <li><input type="reset" class="style2" value="Reset" /></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+
+        </div>
+                 
+           
+            <div class="col-4 col-12-medium">
+
+              <!-- Sidebar -->
+                <div id="sidebar">
+                  <section class="box">
+                    <header>
+                      <h2>About Me:</h2>
+                    </header>
+                    <p>Please use this space to tell us a little bit about yourself. Once the user fills out the form here, they will see an edit/update button instead. If another user visits your profile page, they will not see the button. </p>
+                    <a href="#" class="button style1">Submit</a>
+                  </section>
+                  <section class="box">
+                    <header>
+                      <h2>My Most Liked Posts</h2>
+                    </header>
+                    <ul class="style2">
+                      <li>
+                        <%if(posts.length > 0){%>
+                        <article class="box post-excerpt">
+                          <a href="#" class="image left"><img src="<%= likedPosts[0].image %>" alt="" /></a>
+                          <h3><a href="#"><%= likedPosts[0].title%></a></h3>
+                          <p><%= likedPosts[0].caption %></p>
+                        </article>
+                        <%}%>
+                      </li>
+                      <li>
+                        <%if(posts.length > 1){%>
+                        <article class="box post-excerpt">
+                          <a href="#" class="image left"><img src="<%= likedPosts[1].image %>" alt="" /></a>
+                          <h3><a href="#"><%= likedPosts[1].title%></a></h3>
+                          <p><%= likedPosts[1].caption %></p>
+                        </article>
+                        <%}%>
+                      </li>
+                      <li>
+                        <%if(posts.length > 2){%>
+                        <article class="box post-excerpt">
+                          <a href="#" class="image left"><img src="<%= likedPosts[2].image %>" alt="" /></a>
+                          <h3><a href="#"><%= likedPosts[1].title%></a></h3>
+                          <p><%= likedPosts[2].caption %></p>
+                        </article>
+                        <%}%>
+                      </li>
+                    </ul>
+                    <a href="#" class="button style1">Archives</a>
+                  </section>
+                  <section class="box">
+                    <header>
+                      <h2>My Story Evolves Over Time</h2>
+                    </header>
+                    <ul class="style3">
+                    <% for(var i=0; i<posts.length; i++) {%>
+                      <li><a href="/post/<%= `${posts[i]._id}`%>"><%= posts[i].title %></a></li>
+                      <%}%>
+                    </ul>
+                   
+                  </section>
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+    <!-- Features -->
+      
+  </div>
+</section>
+
+<!-- Highlights -->
+<section id="highlights" class="wrapper style3">
+  <div class="title">In Loving Memory</div>
+  <div class="container">
+    <div class="row aln-center">
+      
+       
+          <% for(var i=0; i<posts.length; i++) {%>
+            <div class="col-4 col-12-medium">
+            <section class="highlight">
+            <li class="">
+              <a href="/post/<%= posts[i]._id%>">
+                <img class="image fit featured" src="<%= posts[i].image%>">
+              </a>
+            </li>
+         
+          <h3><a href="#"><%=`${posts[i].title}`%></a></h3>
+          <p><%=`${posts[i].caption}`%></p>
+          <ul class="actions">
+            <li><a href="/post/<%= posts[i]._id %>" class="button style1">Comment</a></li>
+          </ul>
+        </section>
+      </div>
+          <% } %>
+       
+      </div>
+     
+    </div>
+  </div>
+</section>
+
+
+<section id="highlights" class="wrapper style2">
+  <div class="title">Create New Post</div>
+    <div class="container">
+
+      
+        <div class="row mt-5">
+            <div class="col-6">
+                <div>
+                    <p><strong>User Name</strong>: <%= user.userName %></p>
+                    <p><strong>Email</strong>: <%= user.email %></p>
+                    
+                </div>
+                <div class="mt-5">
+                  <h2>Add a post</h2>
+                  <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="title" name="title">
+                    </div>
+                    <div class="mb-3">
+                      <label for="caption" class="form-label">Caption</label>
+                      <textarea class="form-control" id="caption" name="caption"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="imgUpload" class="form-label">Image</label>
+                      <input type="file" class="form-control" id="imageUpload" name="file">
+                    </div>
+                    <div class=""></div>
+                    <div class="">
+                    <button type="submit" class="button style1 large" value="Upload">Submit</button>
+                    <div class=""></div>
+                    <a href="/logout" class="button style1 large ">Logout</a>
+                    </div>
+                  </form>
+                </div>
+            </div>
+            <div class="">
+              <div class="">
+                <a class="button style3 large" href="/feed">Return to Feed</a>
+              </div>  
+            </div>  
+          </div>
+        </div>
+      
+  
+    </div>
+
+  </div>
+</section>
+<%- include('partials/footer') -%>
