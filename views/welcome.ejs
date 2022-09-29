@@ -1,7 +1,8 @@
 <%- include('partials/header') -%>
 
 
-
+            
+       
 			<!-- Main -->
       <section id="main" class="wrapper style2">
         <div class="title">Welcome, <%= user.userName %></div>
@@ -20,38 +21,65 @@
                       <img src="<%= user.profilePicture%>" alt="profile picture" />
                     </a>
                     <p>My Story.
-                      
-                    After spending most of my life at this point, without my child alive on Earth, I have put together a site that I hope can bring you great comfort in your times of need, and joy in celebrating with others successes we can share. It is my hope that you are supported when you need it most, and don't need to have a reason to connect deeply with those who can offer a safe and supportive envirnment. Please be aware that being a member of this community is a privilege, and we expect you to follow certain rules in order to participate. Kindness is mandatory. As is maintaining respect for others as well as yourself. If you ever feel bullied or experience abuse, we want to know about it right away. We will make every effort to keep this an emotionally safe space.</p>
-                    <p>May you find compassionate understanding here and enjoy sharing memories of your loved ones, as you offer yourself to those who have an understanding of your losses. May we learn to support each other.</p>
-                    <p>Please take a moment and tell us about yourself.</p>
-                    <p></p>
+                
+                        After spending most of my life at this point, without my child alive on Earth, I have put together a site that I hope can bring you great comfort in your times of need, and joy in celebrating with others successes we can share. It is my hope that you are supported when you need it most, and don't need to have a reason to connect deeply with those who can offer a safe and supportive envirnment. Please be aware that being a member of this community is a privilege, and we expect you to follow certain rules in order to participate. Kindness is mandatory. As is maintaining respect for others as well as yourself. If you ever feel bullied or experience abuse, we want to know about it right away. We will make every effort to keep this an emotionally safe space.</p>
+                        <p>May you find compassionate understanding here and enjoy sharing memories of your loved ones, as you offer yourself to those who have an understanding of your losses. May we learn to support each other.</p>
+                        <p>Please take a moment and tell us about yourself.</p>
+                        <p></p>
+                        </article>
+                        <!-- Contact Form -->
+                        <section>
+                        <form method="post" action="#">
+                            <div class="row gtr-50">
+                                <div class="col-6 col-12-small">
+                                    <input type="text" name="name" id="contact-name" placeholder="Name" />
+                                </div>
+                                <div class="col-6 col-12-small">
+                                    <input type="text" name="email" id="contact-email" placeholder="Email" />
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="message" id="contact-message" placeholder="Message" rows="4"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <ul class="actions">
+                                        <li><input type="submit" class="style1" value="Send" /></li>
+                                        <li><input type="reset" class="style2" value="Reset" /></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+          
                   </article>
-                  <!-- Contact Form -->
-                  <section>
-                    <form method="post" action="#">
-                        <div class="row gtr-50">
-                            <div class="col-6 col-12-small">
-                                <input type="text" name="name" id="contact-name" placeholder="Name" />
-                            </div>
-                            <div class="col-6 col-12-small">
-                                <input type="text" name="email" id="contact-email" placeholder="Email" />
-                            </div>
-                            <div class="col-12">
-                                <textarea name="message" id="contact-message" placeholder="Message" rows="4"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <ul class="actions">
-                                    <li><input type="submit" class="style1" value="Send" /></li>
-                                    <li><input type="reset" class="style2" value="Reset" /></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </form>
-                </section>
+                  <div class="row gtr-150">
+                    <%if(posts.length > 0){%>
+                    <div class="col-6 col-12-small">
+                      <section class="box">
+                        <header>
+                          <h2><%= posts[posts.length-1].title %></h2>
+                        </header>
+                        <a href="#" class="image featured"><img src="<%= posts[posts.length-1].image %>" alt="latest post" /></a>
+                        <p><%= posts[posts.length-1].caption %></p>
+                        <a href="#" class="button style1">See Post</a>
+                      </section>
+                    </div>
+                    <%}%>
+                    <%if(posts.length > 2){%>
+                    <div class="col-6 col-12-small">
+                      <section class="box">
+                        <header>
+                          <h2><%= posts[posts.length-2].title %></h2>
+                        </header>
+                        <a href="#" class="image featured"><img src="<%= posts[posts.length-2].image %>" alt="" /></a>
+                        <p><%= posts[posts.length-2].caption %></p>
+                        <a href="#" class="button style1">More</a>
+                      </section>
+                    </div>
+                    <%}%>
+                  </div>
+                </div>
 
-        </div>
-                 
-           
+            </div>
             <div class="col-4 col-12-medium">
 
               <!-- Sidebar -->
@@ -117,6 +145,13 @@
       </section>
 
 
+
+
+    <!-- Features -->
+      
+  </div>
+</section>
+     
 
 
     <!-- Features -->
