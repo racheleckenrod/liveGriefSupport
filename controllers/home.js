@@ -1,5 +1,6 @@
 const Post = require("../models/Post");
 const Comment = require("../models/Comment")
+const Feedback = require("../models/Feedback")
 
 module.exports = {
     getIndex: async (req, res) => {
@@ -20,7 +21,24 @@ module.exports = {
       } catch (err){
         console.log(err)
       }
+    },
+    postFeedback: async (req,res) => {
+      try {
+         console.log(req,res)
+       await Feedback.create({
+          user: req.user.id,
+          guest: req.user.id,
+          email: req.body.email,
+          message: req.body.message,
+        });
+
+        console.log("Feedback has been added!");
+        res.redirect("/");
+      } catch (err) {
+        console.log(err);
+      } 
     }
+
 }
 
 

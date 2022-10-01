@@ -15,8 +15,6 @@ router.get("/editPostPage/:id", postsController.editPostPage);
 
 router.post("/createPost", upload.single("file"), postsController.createPost);
 
-router.post("/feedback", ensureFeedback, postsController.postFeedback);
-
 router.put("/likePost/:id", postsController.likePost);
 
 router.put("/editPost/:id", postsController.editPost)

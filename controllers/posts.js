@@ -1,7 +1,7 @@
 const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 const Comment = require("../models/Comment");
-const Feedback = require("../models/Feedback")
+
 // const { post } = require("../routes/main");
 
 module.exports = {
@@ -62,13 +62,6 @@ module.exports = {
     } catch (err) {
       console.log(err);
     } 
-  },
-  postFeedback: async (req, res) => {
-      try {
-
-      }catch (err) {
-        console.log(err);
-      }
   },
   likePost: async (req, res) => {
     try {
