@@ -43,7 +43,8 @@ module.exports = {
   },
   createPost: async (req, res) => {
     try {
-      // Upload image to cloudinary
+      // Upload image to cloudinary- make option for posts without image
+      
       const result = await cloudinary.uploader.upload(req.file.path);
       console.log(result)
 
