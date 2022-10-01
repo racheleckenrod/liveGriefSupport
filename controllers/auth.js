@@ -1,6 +1,7 @@
 const passport = require("passport");
 const validator = require("validator");
 const User = require("../models/User");
+const Guest = require("../models/Guest");
 
 exports.getLogin = (req, res) => {
   if (req.user) {
