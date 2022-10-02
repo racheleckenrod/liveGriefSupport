@@ -32,3 +32,8 @@ Credits:
 	Other:
 		jQuery (jquery.com)
 		Responsive Tools (github.com/ajlkn/responsive-tools)
+
+
+		Many thanks to Brad @ Travery Media for his many instructional videos.
+
+
