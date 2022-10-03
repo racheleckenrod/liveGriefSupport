@@ -11,6 +11,7 @@ const io = require("socket.io")(2899, {
 });
 
 // Testing comment on dev branch
+// Testing comments in Production Branch
 // const io = require("socket.io")(httpServer, {
 //   cors: {
 //     origin: "http://live-grief-support.herokuapp.com",
@@ -114,6 +115,71 @@ app.use("/comment", commentRoutes);
 app.use("/chat", chatRoutes);
 app.get("/chat",(req, res) => 
 render('lobby.ejs', {  }))
+
+
+// Imported from chatChordApp:
+
+const botName = "Grief Support Bot";
+
+// (async () => {
+//   pubClient = createClient({ url: "redis://127.0.0.1:6379" });
+//   await pubClient.connect();
+//   subClient = pubClient.duplicate();
+//   io.adapter(createAdapter(pubClient, subClient));
+// })();
+
+// // Run when client connects
+io.on("connection", (socket) => {
+  // console.log('New WS Connection');
+  socket.on("joinRoom", ({ username, room }) => {
+    const user = userJoin(socket.id, username, room);
+
+    socket.join(user.room);
+
+//     // Welcome current user
+    socket.emit("message", formatMessage(botName, "Welcome to Live Grief Support!"));
+
+//     // Broadcast when a user connects
+    socket.broadcast
+      .to(user.room)
+      .emit(
+        "message",  formatMessage(botName,`${user.username} has joined the chat`)
+//         formatMessage(botName, `${user.username} has joined the chat`)
+      );
+
+//     // Send users and room info
+    io.to(user.room).emit("roomUsers", {
+      room: user.room,
+      users: getRoomUsers(user.room),
+    });
+  });
+
+//   // Listen for chatMessage
+  socket.on("chatMessage", (msg) => {
+    const user = getCurrentUser(socket.id);
+       
+    io.to(user.room).emit("message", formatMessage(user.username, msg));
+  });
+
+//   // Runs when client disconnects
+  socket.on("disconnect", () => {
+    // io.emit("message",  formatMessage(botName,'a user has left the chat'))
+    const user = userLeave(socket.id);
+
+    if (user) {
+      io.to(user.room).emit(
+        "message",
+        formatMessage(botName, `${user.username} has left the chat`)
+      );
+
+//       // Send users and room info
+      io.to(user.room).emit("roomUsers", {
+        room: user.room,
+        users: getRoomUsers(user.room),
+      });
+    }
+  });
+});
 
 //Server Running
 app.listen(process.env.PORT, () => {
