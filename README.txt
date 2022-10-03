@@ -44,3 +44,5 @@ Credits:
 
 		Big thanks to the community of 100devs for all the support.
 
+		Fixing a million detached heads isn't that fun, oh how I wish I had not listened to other people when deleting what I made..
+
