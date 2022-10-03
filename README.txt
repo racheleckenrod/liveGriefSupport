@@ -35,4 +35,12 @@ Credits:
 
 		Big thanks to the community of 100devs for all the support.
 
-		new comment to the readme
+		new comment to the readme 
+    
+		Many thanks to Brad @ Travery Media for his many instructional videos.
+
+
+
+
+		Big thanks to the community of 100devs for all the support.
+
