@@ -35,8 +35,6 @@ Credits:
 
 		many thanks to the community of 100devs
 
-		Big thanks to the community of 100devs for all the support.
-
 		new comment to the readme 
     
 		Many thanks to Brad @ Travery Media for his many instructional videos.
@@ -45,4 +43,6 @@ Credits:
 
 
 		Big thanks to the community of 100devs for all the support.
+
+		Coming to you from the enforcer..
 
