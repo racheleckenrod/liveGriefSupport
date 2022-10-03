@@ -1,6 +1,7 @@
 const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 const Comment = require("../models/Comment");
+
 // const { post } = require("../routes/main");
 
 module.exports = {
@@ -43,7 +44,8 @@ module.exports = {
   },
   createPost: async (req, res) => {
     try {
-      // Upload image to cloudinary
+      // Upload image to cloudinary- make option for posts without image
+      
       const result = await cloudinary.uploader.upload(req.file.path);
       console.log(result)
 
@@ -59,7 +61,7 @@ module.exports = {
       res.redirect("/profile");
     } catch (err) {
       console.log(err);
-    }
+    } 
   },
   likePost: async (req, res) => {
     try {

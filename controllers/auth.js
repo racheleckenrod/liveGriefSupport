@@ -1,6 +1,7 @@
 const passport = require("passport");
 const validator = require("validator");
 const User = require("../models/User");
+const Guest = require("../models/Guest");
 
 exports.getLogin = (req, res) => {
   if (req.user) {
@@ -115,4 +116,50 @@ exports.postSignup = (req, res, next) => {
       });
     }
   );
+};
+
+// exports.postFeedback = async (req, res) => {
+//   try {
+
+//   }catch (err) {
+//     console.log(err);
+//   }
+// }
+
+exports.postFeedback = (req, res, next) => {
+  const validationErrors = [];
+  if (!validator.isEmail(req.body.email))
+    validationErrors.push({ msg: "Please enter a valid email address." });
+
+  if (!validator.isLength(req.body.userName, { min: 1 }))
+  validationErrors.push({
+    msg: "Please enter your name.",
+  });
+
+  if (validationErrors.length) {
+    req.flash("errors", validationErrors);
+    return res.redirect("/");
+  }
+  req.body.email = validator.normalizeEmail(req.body.email, {
+    gmail_remove_dots: false,
+  });
+
+  if (req.user || req.guest){
+    console.log("what's next?")
+    return next();
+    
+  }
+
+  const guest = new Guest({
+    guestName: req.body.userName,
+    email: req.body.email,
+  });
+
+  guest.save((err) => {
+    if (err) {
+      return next(err);
+    }
+  });
+
+
 };
