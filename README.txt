@@ -33,6 +33,9 @@ Credits:
 		jQuery (jquery.com)
 		Responsive Tools (github.com/ajlkn/responsive-tools)
 
+		
+		This code has updated color and runs the main app
+    
 		many thanks to the community of 100devs
 
 		new comment to the readme 
@@ -45,4 +48,5 @@ Credits:
 		Big thanks to the community of 100devs for all the support.
 
 		Coming to you from the enforcer..
+
 
