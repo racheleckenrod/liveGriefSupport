@@ -11,6 +11,14 @@ app.use(cors())
 
 // Testing comments on newMain 
 
+// Testing comment on dev branch
+// Testing comments in Production Branch
+// const io = require("socket.io")(httpServer, {
+//   cors: {
+//     origin: "http://live-grief-support.herokuapp.com",
+//     methods: ["GET", "POST"]
+//   }
+// });
 
 const mongoose = require("mongoose");
 const passport = require("passport");
