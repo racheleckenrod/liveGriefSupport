@@ -34,3 +34,7 @@ Credits:
 		Responsive Tools (github.com/ajlkn/responsive-tools)
 
 		Big thanks to the community of 100devs for all the support.
+
+		Many thanks to Brad @ Travery Media for his many instructional videos.
+
+
