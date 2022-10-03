@@ -33,7 +33,10 @@ Credits:
 		jQuery (jquery.com)
 		Responsive Tools (github.com/ajlkn/responsive-tools)
 
-		Big thanks to the community of 100devs for all the support.
+		
+		This code has updated color and runs the main app
+    
+		many thanks to the community of 100devs
 
 		new comment to the readme 
     
@@ -44,5 +47,12 @@ Credits:
 
 		Big thanks to the community of 100devs for all the support.
 
-		Fixing a million detached heads isn't that fun, oh how I wish I had not listened to other people when deleting what I made..
-	this could be part two of finding the heroku branch if it even works that way, looks like this headfix branch I am on does not get pushed to heroku and the heroku/headfix does, or might.. ? i am certainly going to try.
+		Fixing a million detached heads isn't that fun, oh how I wish I had not listened
+    to other people telling me to just delete what I made..
+	  this could be part two of finding the heroku branch if it even works that way, looks
+    like this headfix branch I am on does not get pushed to heroku and the heroku/headfix
+    does, or might.. ? i am certainly going to try.
+
+		Coming to you from the enforcer..
+
+incoming comment from the "final" branch, designed to re-attach the main HEAD
