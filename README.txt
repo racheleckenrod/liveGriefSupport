@@ -32,3 +32,6 @@ Credits:
 	Other:
 		jQuery (jquery.com)
 		Responsive Tools (github.com/ajlkn/responsive-tools)
+
+		
+		This code has updated color and runs the main app
