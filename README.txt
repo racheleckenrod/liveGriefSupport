@@ -33,12 +33,12 @@ Credits:
 		jQuery (jquery.com)
 		Responsive Tools (github.com/ajlkn/responsive-tools)
 
-<<<<<<< HEAD
+
 		many thanks to the community of 100devs
 
-=======
+
 		Big thanks to the community of 100devs for all the support.
->>>>>>> headFix
+
 
 		new comment to the readme 
     
