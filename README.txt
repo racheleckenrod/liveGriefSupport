@@ -35,7 +35,6 @@ Credits:
 
 		many thanks to the community of 100devs
 
-
 		new comment to the readme 
     
 		Many thanks to Brad @ Travery Media for his many instructional videos.
