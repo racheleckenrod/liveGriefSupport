@@ -45,4 +45,4 @@ Credits:
 		Big thanks to the community of 100devs for all the support.
 
 		Fixing a million detached heads isn't that fun, oh how I wish I had not listened to other people when deleting what I made..
-
+	this could be part two of finding the heroku branch if it even works that way, looks like this headfix branch I am on does not get pushed to heroku and the heroku/headfix does, or might.. ? i am certainly going to try.
