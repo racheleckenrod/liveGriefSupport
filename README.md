@@ -11,6 +11,7 @@ talented photographer Felicia Simion. If you like photography or just enjoy bein
 awesome stuff, check out her portfolio for more stunning images:
 
 ***Deleted website link***
+http://ineedchemicalx.deviantart.com/
 
 (* = Not included! Only meant for use with my own on-site demo, so please do NOT download
 and/or use any of Felicia's work without her explicit permission!)
