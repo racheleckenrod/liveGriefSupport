@@ -1,6 +1,6 @@
-newMain
+
 node_modules
-*.env
+**.env
 
 # Logs
 logs
