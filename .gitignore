@@ -1,6 +1,7 @@
-newMain
+
 node_modules
 *.env
+.DS_Store
 
 # Logs
 logs

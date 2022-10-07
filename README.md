@@ -1,3 +1,6 @@
+
+Now, I am somewhat baffled by this, I thought I had a README.md in here already..
+
 Escape Velocity by HTML5 UP
 html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
@@ -8,7 +11,9 @@ layout, and styling for all basic page elements. Its demo images* are courtesy o
 talented photographer Felicia Simion. If you like photography or just enjoy being blown away by
 awesome stuff, check out her portfolio for more stunning images:
 
-http://ineedchemicalx.deviantart.com/
+
+***Deleted website link***
+
 
 (* = Not included! Only meant for use with my own on-site demo, so please do NOT download
 and/or use any of Felicia's work without her explicit permission!)
@@ -50,10 +55,17 @@ Credits:
 		Big thanks to the community of 100devs for all the support.
 
 ***
-after spending the day yesterday with rebasing etc, I am ready to approad coding differently I created this branch brigde to help me work out the interfacing between the two sites that is only a mvp of the final product that will make much of this unnecessary, but serves me well as a learning experience. for example: the sessions and using the guest route- In the other site I am going to eventually abondon, I need to set up a way to have the user and guest user be able to submit forms or restrict access to the chatrooms or that page alltogether which would orgininate here where they fin the link that points to grief-support, aka the chat. I see right now that the process is still not being respected as all this info belongs on the new branch's readne, and not so much here, 
+after spending the day yesterday with rebasing etc, I am ready to approad coding differently I created this
+branch brigde to help me work out the interfacing between the two sites that is only a mvp of the final product 
+that will make much of this unnecessary, but serves me well as a learning experience. for example: the sessions 
+and using the guest route- In the other site I am going to eventually abondon, I need to set up a way to have the
+user and guest user be able to submit forms or restrict access to the chatrooms or that page alltogether which 
+would orgininate here where they fin the link that points to grief-support, aka the chat. I see right now that
+the process is still not being respected as all this info belongs on the new branch's readne, and not so much here, 
 ***
 
-learning the lesson from the last week. make another README.md, as there is not one here right now, only this .txt file I may have done something "wrong" but I wanted to have on e in here, I think it went to 
+learning the lesson from the last week. make another README.md, as there is not one here right now, only
+this .txt file I may have done something "wrong" but I wanted to have on e in here, I think it went to 
 heroku. in this :
 
 racheleckenrod@Rachels-Air LiveGriefSupport % git remote
@@ -90,7 +102,8 @@ To https://git.heroku.com/live-grief-support.git
    To make it easier to see and why it is so important, here is a little more of the console.log:
 
 
-racheleckenrod@Rachels-Air LiveGriefSupport % git commit -m "the lesson I am beginning to learn is about having my work online"
+racheleckenrod@Rachels-Air LiveGriefSupport % git commit -m "the lesson I am beginning to learn is 
+about having my work online"
 [headFix 988ac06] the lesson I am beginning to learn is about having my work online
  10 files changed, 76 insertions(+), 192 deletions(-)
  create mode 100644 README.md
@@ -144,36 +157,62 @@ Your branch is ahead of 'heroku-staging/tempFix' by 1 commit.
 racheleckenrod@Rachels-Air LiveGriefSupport % 
 
 
-To explain it in other words, every time you update your website (on heroku, anyway, and this was for free which is ending in a month)...
+To explain it in other words, every time you update your website (on heroku, anyway, and this was for 
+free which is ending in a month)...
 
 it keeps what you just did .
 
 like taking the most recent work and removing it from you. leaving you without a HEAD. 
 
-so, if you don't know that that is what is happening, you can't make something nice for heroku. this is why my best code was at heroku and not in my computer. They dont take a picture of your painting, they keep your painting. So you need to make them something that you don't want back. not show them and  they get a "version" like a copy, but like make them a print of the original so they can have it. It was a lot of work to get my HEADs back... those are commits they take and github doesn't have access to the commits heroku has. So you need to make a whole package to give away. I can't probably explain what it felt like in my body when I got those HEADs back the other day. I have no problem making them a file and giving it to them ... like that other README.md that I just made and they have the ONLY (I think) "copy" of it. the main/master thing 
+so, if you don't know that that is what is happening, you can't make something nice for heroku. this 
+is why my best code was at heroku and not in my computer. They dont take a picture of your painting, 
+they keep your painting. So you need to make them something that you don't want back. not show them and 
+they get a "version" like a copy, but like make them a print of the original so they can have it. It was 
+a lot of work to get my HEADs back... those are commits they take and github doesn't have access to the 
+commits heroku has. So you need to make a whole package to give away. I can't probably explain what it 
+felt like in my body when I got those HEADs back the other day. I have no problem making them a file
+and giving it to them ... like that other README.md that I just made and they have the ONLY (I think) 
+"copy" of it. the main/master thing 
 
-So, for me now, what I see there is to do... is an old fashioned copy/paste of this text file into another NEW README.md, that eventually will get picked up by git, and want to merge into the other original that I made, essentially leaving me with one. OK?
+So, for me now, what I see there is to do... is an old fashioned copy/paste of this text file into another 
+NEW README.md, that eventually will get picked up by git, and want to merge into the other original that I made, 
+essentially leaving me with one. OK?
 
 
 
-Now, I made this in the other file so that the person who has this LICENSE in MY file can underststand what she needs to do for herself.
+Now, I made this in the other file so that the person who has this LICENSE in MY file can underststand what 
+she needs to do for herself.
 
-hahahaah---here is a copy/paste from the other file, but just puts in the end of what I wanted to include with somebody else's thing:
+hahahaah---here is a copy/paste from the other file, but just puts in the end of what I wanted to include with 
+somebody else's thing:
 
 
 
-To explain it in other words, every time you update your website (on heroku, anyway, and this was for free which is ending in a month)...
+To explain it in other words, every time you update your website (on heroku, anyway, and this was for free which 
+is ending in a month)...
 
 it keeps what you just did .
 
 like taking the most recent work and removing it from you. leaving you without a HEAD. 
 
-so, if you don't know that that is what is happening, you can't make something nice for heroku. this is why my best code was at heroku and not in my computer. They dont take a picture of your painting, they keep your painting. So you need to make them something that you don't want back. not show them and  they get a "version" like a copy, but like make them a print of the original so they can have it. It was a lot of work to get my HEADs back... those are commits they take and github doesn't have access to the commits heroku has. So you need to make a whole package to give away. I can't probably explain what it felt like in my body when I got those HEADs back the other day. I have no problem making them a file and giving it to them ... like that other README.md that I just made and they have the ONLY (I think) "copy" of it. the main/master thing 
+so, if you don't know that that is what is happening, you can't make something nice for heroku. this is why my 
+best code was at heroku and not in my computer. They dont take a picture of your painting, they keep your painting. 
+So you need to make them something that you don't want back. not show them and  they get a "version" like a copy, 
+but like make them a print of the original so they can have it. It was a lot of work to get my HEADs back... 
+those are commits they take and github doesn't have access to the commits heroku has. So you need to make a 
+whole package to give away. I can't probably explain what it felt like in my body when I got those HEADs back 
+the other day. I have no problem making them a file and giving it to them ... like that other README.md that 
+I just made and they have the ONLY (I think) "copy" of it. the main/master thing 
 
-So, for me now, what I see there is to do... is an old fashioned copy/paste of this text file into another NEW README.md, that eventually will get picked up by git, and want to merge into the other original that I made, essentially leaving me with one. OK?
+So, for me now, what I see there is to do... is an old fashioned copy/paste of this text file into another
+NEW README.md, that eventually will get picked up by git, and want to merge into the other original that I
+made, essentially leaving me with one. OK?
 
 
 
-I put a little more info in the other README in the last commit, but even for me, keeping track of two README files in each branch is a little much, so I'll be making this last comment in the README.txt file and be leaving it behind, moving forward with the .md at least in this project. I can only assume they will be reunited at some point and updated but more likely merged.
+I put a little more info in the other README in the last commit, but even for me, keeping track of two README 
+files in each branch is a little much, so I'll be making this last comment in the README.txt file and be leaving 
+it behind, moving forward with the .md at least in this project. I can only assume they will be reunited at some 
+point and updated but more likely merged.
 
 -so long-
