@@ -1,13 +1,15 @@
 const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 const Comment = require("../models/Comment");
+
 // const { post } = require("../routes/main");
 
 module.exports = {
   getProfile: async (req, res) => {
     try {
       const posts = await Post.find({ user: req.user.id });
-      res.render("profile.ejs", { posts: posts, user: req.user });
+      const likedPosts = await Post.find({ user: req.user.id }).sort({likes: "desc"}).lean();
+      res.render("profile.ejs", { posts: posts, user: req.user, likedPosts: likedPosts });
     } catch (err) {
       console.log(err);
     }
@@ -32,9 +34,18 @@ module.exports = {
       console.log(err);
     }
   },
+  getNewPost:  async (req, res) => {
+    try {
+      const posts = await Post.find({ user: req.user.id });
+      res.render("newPost.ejs", { posts: posts, user: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
   createPost: async (req, res) => {
     try {
-      // Upload image to cloudinary
+      // Upload image to cloudinary- make option for posts without image
+      
       const result = await cloudinary.uploader.upload(req.file.path);
       console.log(result)
 
@@ -50,7 +61,7 @@ module.exports = {
       res.redirect("/profile");
     } catch (err) {
       console.log(err);
-    }
+    } 
   },
   likePost: async (req, res) => {
     try {

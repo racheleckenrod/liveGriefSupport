@@ -13,16 +13,17 @@ const io = require("socket.io")(PORT2, {
   methods: ["GET", "POST"]
 }
 });
+
+app.use(cors())
+
 // Testing comments in Production Branch
 // const io = require("socket.io")(httpServer, {
 //   cors: {
-//     origin: "http://localhost:2899",
+//     origin: "http://live-grief-support.herokuapp.com",
 //     methods: ["GET", "POST"]
 //   }
 // });
 
-// httpServer.listen(3000);
-// const formatMessage = require("./utils/messages");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const session = require("express-session");
@@ -47,22 +48,8 @@ const chatRoutes = require("./routes/chat")
 // const server = express()  
 // we already have const app = express(), so will try to use that instead of creating another variable set to the same thing. see github.com/heroku-examples/node-websockets/blob/main/server.js
 
-// app.use((req, res) => res.sendFile('chat/room.ejs', {root: __dirname }))
 
-// create a Socket.io server
-// const server = http.createServer(app);
-// const io = socketio(server);
 
-// handle connections
-io.on('connection', socket => {
-  console.log('Client connected', new Date().toTimeString());
-  socket.emit('timeClock', "It's about time");
-  socket.on('disconnect', () => console.log('Client disconnected'));
-});
-
-// broadcast updates
-setInterval(() => io.emit('time', "about time"), 1000)
-setInterval(() => io.emit('timeData', new Date().toTimeString()), 1000);
 
 //Use .env file in config folder
 
@@ -82,7 +69,6 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 // server.use(express.static("public"))
 
-app.set('socketio', io);
 
 //Body Parsing
 app.use(express.urlencoded({ extended: true }));

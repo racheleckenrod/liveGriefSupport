@@ -31,8 +31,33 @@
        <%}%>
        <% } %>
           </section>
+          
+      <!-- <div class="col-4 col-12-medium"></div> -->
+          <% for(var i=0; i<posts.length; i++) {%>
+            <div class="col-4 col-12-medium">
+            <section class="highlight">
+              <a href="/post/<%= `${posts[i]._id}`%>"  class="image featured">
+                <img src= "<%= posts[i].image%>">
+              </a>
+              <h3><a href="#"><%=posts[i].title%></a></h3>
+              <p><%=posts[i].caption%></p>
+              <div class="">Likes: <%= posts[i].likes %></div>
+              <div class="">Posted by:<%=posts[i].user.userName%></div>
+              <ul class="actions">
+                <li><a href="#" class="button style1">Learn More</a></li>
+              </ul>
+              <h4>Comments:</h4>
+              <% for(var j=0; j<comments.length; j++) {%>
+                <% if( comments[j].post  == `${posts[i]._id}` ) {%>
+                    <p><%= comments[j].comment %></p>
+                  <%}%>
+                  <%}%>
+            </section>
+            </div>
+          <%}%>
       </div>
-        <%}%>
+    </div>
+       
        
       </div>
       <!-- <div class="col-4 col-12-medium">
