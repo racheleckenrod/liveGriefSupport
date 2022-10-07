@@ -46,4 +46,10 @@ Credits:
 		Big thanks to the community of 100devs for all the support.
 
 
-To continue my documentation, I just found and deleted a package-lock.jason file from my desktop- doesn't seem like it belongs there. glad to have it removed. just had a successful post to the database from my current local host, and updated the .gitignore to include the DS_Store files.. whatever they are
+To continue my documentation, I just found and deleted a package-lock.jason file 
+from my desktop- doesn't seem like it belongs there. glad to have it removed. just had
+ a successful post to the database from my current local host, and updated the .gitignore 
+ to include the DS_Store files.. whatever they are
+
+
+ Just noticed that me .md README is missing from the bridge here, so I'm going to remove this txt README here.
