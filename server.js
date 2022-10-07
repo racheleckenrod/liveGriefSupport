@@ -3,6 +3,14 @@ const app = express();
 const cors = require('cors')
 const path = require("path");
 const http = require("http");
+const server = http.createServer(app);
+// const { Server } = require("socket.io");
+// const io = new Server(server);
+// instead we are using
+// const io = require('socket.io')(server)
+const socketio = require("socket.io")
+const io = socketio(server)
+
 require("dotenv").config({ path: "./config/.env" });
 const PORT = process.env.PORT;
 
@@ -50,6 +58,7 @@ connectDB();
 app.use(cors())
 
 //Using EJS for views
+app.set('views', './views')
 app.set("view engine", "ejs");
 
 //Static Folder
@@ -89,9 +98,14 @@ app.use("/", mainRoutes);
 app.use("/post", postRoutes);
 app.use("/comment", commentRoutes);
 app.use("/chat", chatRoutes);
-app.get("/chat",(req, res) => 
-render('lobby.ejs', {  }))
-
+app.get("/chat",(req, res) => {
+render(__dirname + 'lobby.ejs', { PORT2 }),
+console.log("sockets are strange");
+});
+app.get('/', (req, res) => {
+  console.log("node_modules")
+  res.sendFile('/node_modules/@socket.io/client-dist/socket.io.js');
+});
 //Server Running
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on PORT ${process.env.PORT}, you better catch it!`);
