@@ -184,6 +184,11 @@ I was wondering how to get this file back and just learn that if I start typing 
 this is not to be liked or disliked but known. 
 
 
+However long that took me, I am on the bridge which is my idea of a working branch for this repo that gets merged into main with beautiful wonder updates as we go along so that I am no longer working directly on main, but sticking to the bridge and incorporating my changes in the main. This code is live online and needs to have a stable branch as I continue to improve it. it is going to stay a separate site from the chats, but linked to the other one and will teach me boatloads aboiut sessions and logging in and websockets and all kinds of things. a major one in how to collaborate with others even though it is just me. I intend to work on  this project with room for contributions from other people, so I need to learn how to be set up that way.
+
+with that said, I am going to make this commit and then merge it into main by going there and merging this into her.
+
+
 This code is ok, but the form didnt send and took the site down, I thought I was sending it from localhost, but I guess I was running live in chat.
 
 
