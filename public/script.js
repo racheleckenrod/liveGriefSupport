@@ -1,4 +1,6 @@
-const socket = io(`http://localhost:${process.env.PORT2}`)
+// const io = require("socket.io")
+
+const socket = io(window.location.hostname);
 
 let timeClock 
 
