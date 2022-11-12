@@ -17,11 +17,13 @@ module.exports = {
   getFeed: async (req, res) => {
     try {
       const posts = await Post.find().populate('user').sort({ createdAt: "desc" }).lean();
+      // const posts = await Post.find({ user: req.user.id });
+
       const comments = await Comment.find().sort({ createdAt: "asc" }).lean()
 
-      console.log(comments, posts, "getting work done")
+      console.log(posts, "getting work done")
       res.render("feed.ejs", { posts: posts, comments: comments });
-      console.log(comments, posts)
+      // console.log(comments, posts)
     } catch (err) { 
       console.log(err);
     }
