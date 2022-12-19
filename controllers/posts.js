@@ -21,7 +21,7 @@ module.exports = {
 
       const comments = await Comment.find().sort({ createdAt: "asc" }).lean()
 
-      console.log(posts, "getting work done")
+      console.log("getting work done")
       res.render("feed.ejs", { posts: posts, comments: comments });
       // console.log(comments, posts)
     } catch (err) { 

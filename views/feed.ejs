@@ -25,28 +25,77 @@
     </div>
   </div> -->
 <!-- </section>  -->
+
+<!-- Highlights -->
+<section id="highlights" class="wrapper style3">
+  <div class="title">In Loving Memory</div>
+  <div class="container">
+    <div class="row aln-center">
+      
+       
+          <% for(var i=0; i<posts.length; i++) {%>
+            <div class="col-4 col-12-medium">
+            <section class="highlight">
+              <ul class="actions">
+                <li>
+                  <a href="/post/<%= posts[i]._id%>">
+                    <img class="image fit featured" src="<%= posts[i].image%>">
+                  </a>
+                </li>
+              </ul>
+           
+         
+          <h3><a href="#"><%=`${posts[i].title}`%></a></h3>
+          <p><%=`${posts[i].caption}`%></p>
+          <ul class="actions">
+            <li><a href="/post/<%= posts[i]._id %>" class="button style1">Comment</a></li>
+          </ul>
+        </section>
+      </div>
+          <% } %>
+       
+      </div>
+     
+    </div>
+  </div>
+</section>
            
 
 <!-- Highlights -->
+<!-- <section id="highlights" class="wrapper style3">
+  <div class="title">Our Community</div>
+  <div class="container">
+    <div class="row aln-center">
+      <div class="col-xs-9 col-6"> --> 
+
+
 <section id="highlights" class="wrapper style3">
   <div class="title">Our Community</div>
   <div class="container">
     <div class="row aln-center">
-      <div class="col-xs-9 col-6">
       
-      <% for(var i=0; i<posts.length; i++) {%>
+      <!-- <% for(var i=0; i<posts.length; i++) {%> -->
 
        
-          <div class="highlight">
+          <!-- <div class="highlight"> -->
+
+            <% for(var i=0; i<posts.length; i++) {%>
+              <div class="col-4 col-12-medium">
+              <section class="highlight">
+                <ul class="actions">
+                  <li>
            
-                <a href="/post/<%= `${posts[i]._id}`%>"  class="image featured">
+                <a href="/post/<%= `${posts[i]._id}`%>"  class="image fit featured">
                   <img src= "<%= posts[i].image%>">
                 </a>
+
+              </li>
+            </ul>
         
-      <h3><a href="#"><%=posts[i].title%></a></h3>
+      <h3><a href="/post/<%= `${posts[i]._id}`%>"><%=posts[i].title%></a></h3>
       <p><%=posts[i].caption%></p>
-      <div class="">Likes: <%= posts[i].likes %></div>
-      <div class="">Posted by:<%=posts[i].user.userName%></div>
+      <div class="actions">Likes: <%= posts[i].likes %></div>
+      <div class="actions">Posted by:<%=posts[i].user.userName%></div>
       
       <h4>Comments:</h4>
         <% for(var j=0; j<comments.length; j++) {%>
@@ -54,22 +103,24 @@
                 
                 <p><%= comments[j].comment %></p>
               
-              <%}%>
-       
-       <% console.log(posts[i]._id )%>
-       <% console.log(comments[j].post )%>
-     
+              <%}%>     
        <%}%>
        <ul class="actions">
         <li><a href="/post/<%= `${posts[i]._id}`%>" class="button style1">Learn More</a></li>
       </ul>
        <% } %>
 
-          
+      </section>
+    </div>
+      <% } %>
     </div>
   </div>
 </div>
 </section>
+
+<% console.log("posts[i]._id" )%>
+<% console.log("comments[j].post" )%>
+
 
 
 <%- include('partials/footer') -%>
