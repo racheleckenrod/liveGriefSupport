@@ -1,34 +1,10 @@
 <%- include('partials/header') -%>
 
 
-<!-- Highlights -->
-<!-- 
-<section id="highlights" class="wrapper style3">
-  <div class="title">In Loving Memory</div>
-  <div class="container">
-    <div class="row aln-center">
-      
-       
-          <% for(var i=0; i<posts.length; i++) {%>
-            <div class="col-4 col-12-medium">
-            <section class="highlight">
-              <ul class="list-unstyled">
-                <li class="list-unstyled">
-                  <a href="/post/<%= posts[i]._id%>">
-                    <img class="image fit featured" src="<%= posts[i].image%>">
-                  </a>
-                </li>
-              </ul>
-            </section>
-            </div>
-            <% } %>
-    </div>
-  </div> -->
-<!-- </section>  -->
 
 <!-- Highlights -->
 <section id="highlights" class="wrapper style3">
-  <div class="title">In Loving Memory</div>
+  <div class="title">Our Community</div>
   <div class="container">
     <div class="row aln-center">
       
@@ -44,9 +20,30 @@
                 </li>
               </ul>
            
-         
-          <h3><a href="#"><%=`${posts[i].title}`%></a></h3>
-          <p><%=`${posts[i].caption}`%></p>
+          <h3><a href="/post/<%= `${posts[i]._id}`%>"><%=posts[i].title%></a></h3>
+          <p><%=posts[i].caption%></p>
+          <div class="actions">
+            <h5>Likes: <%= posts[i].likes %></h5>
+          </div>
+          <div class="actions">
+            Posted by:<a href="/<%= `getProfile?user= ${posts[i].user.userName}`%>"><%= posts[i].user.userName%>
+            </a>
+          </div>
+              <h4>Comments:</h4>
+              <% for(var j=0; j<comments.length; j++) {%>
+                  <% if( comments[j].post  == `${posts[i]._id}` ) {%>
+                      
+                      <p><%= comments[j].comment %></p>
+                    
+                  <%}%>     
+             <%}%>
+             <form
+             class="actions"
+             action="/post/likePost/<%=posts[i]._id%>?_method=PUT"
+             method="POST"
+           >
+             <button class="btn style1 fa fa-heart" type="submit"></button>
+           </form>
           <ul class="actions">
             <li><a href="/post/<%= posts[i]._id %>" class="button style1">Comment</a></li>
           </ul>
@@ -61,62 +58,6 @@
 </section>
            
 
-<!-- Highlights -->
-<!-- <section id="highlights" class="wrapper style3">
-  <div class="title">Our Community</div>
-  <div class="container">
-    <div class="row aln-center">
-      <div class="col-xs-9 col-6"> --> 
-
-
-<section id="highlights" class="wrapper style3">
-  <div class="title">Our Community</div>
-  <div class="container">
-    <div class="row aln-center">
-      
-      <!-- <% for(var i=0; i<posts.length; i++) {%> -->
-
-       
-          <!-- <div class="highlight"> -->
-
-            <% for(var i=0; i<posts.length; i++) {%>
-              <div class="col-4 col-12-medium">
-              <section class="highlight">
-                <ul class="actions">
-                  <li>
-           
-                <a href="/post/<%= `${posts[i]._id}`%>"  class="image fit featured">
-                  <img src= "<%= posts[i].image%>">
-                </a>
-
-              </li>
-            </ul>
-        
-      <h3><a href="/post/<%= `${posts[i]._id}`%>"><%=posts[i].title%></a></h3>
-      <p><%=posts[i].caption%></p>
-      <div class="actions">Likes: <%= posts[i].likes %></div>
-      <div class="actions">Posted by:<%=posts[i].user.userName%></div>
-      
-      <h4>Comments:</h4>
-        <% for(var j=0; j<comments.length; j++) {%>
-            <% if( comments[j].post  == `${posts[i]._id}` ) {%>
-                
-                <p><%= comments[j].comment %></p>
-              
-              <%}%>     
-       <%}%>
-       <ul class="actions">
-        <li><a href="/post/<%= `${posts[i]._id}`%>" class="button style1">Learn More</a></li>
-      </ul>
-       <% } %>
-
-      </section>
-    </div>
-      <% } %>
-    </div>
-  </div>
-</div>
-</section>
 
 <% console.log("posts[i]._id" )%>
 <% console.log("comments[j].post" )%>
