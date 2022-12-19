@@ -1524,6 +1524,7 @@ input, select, textarea {
 		-ms-transition: all .25s ease-in-out;
 		transition: all .25s ease-in-out;
 		-webkit-appearance: none;
+		appearance: none;
 		display: block;
 		border: 0;
 		background: #eee;
@@ -1751,7 +1752,8 @@ input, select, textarea {
 		padding-left: 1em;
 	}
 	ul li::marker {
-		color:red !important;
+		/* color:red; */
+		list-style: none;
 	}
 
 		ul li {
@@ -1793,7 +1795,7 @@ input, select, textarea {
 				}
 
 	ol {
-		list-style: decimal;
+		/* list-style: decimal; */
 		padding-left: 1.25em;
 	}
 

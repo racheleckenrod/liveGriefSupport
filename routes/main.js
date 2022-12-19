@@ -16,5 +16,7 @@ router.get("/logout", authController.logout);
 router.get("/signup", authController.getSignup);
 router.post("/signup", authController.postSignup);
 router.get("/welcome", ensureAuth, homeController.getWelcome);
+router.get("/feedFix", ensureAuth, postsController.getFeedFix);
+
 
 module.exports = router;
