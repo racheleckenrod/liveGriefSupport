@@ -14,6 +14,16 @@ module.exports = {
       console.log(err);
     }
   },
+  showProfile: async (user, res) => {
+    try {
+      const posts = await Post.find({ user: req.user.id });
+      const likedPosts = await Post.find({ user: req.user.id }).sort({likes: "desc"}).lean();
+      res.render("profile.ejs", { posts: posts, user: req.user, likedPosts: likedPosts });
+    } catch (err) {
+      console.log(err);
+    }
+
+  },
   getFeed: async (req, res) => {
     try {
       const posts = await Post.find().populate('user').sort({ createdAt: "desc" }).lean();
@@ -21,7 +31,7 @@ module.exports = {
 
       const comments = await Comment.find().sort({ createdAt: "asc" }).lean()
 
-      console.log(posts, "getting work done")
+      console.log("getting work done")
       res.render("feed.ejs", { posts: posts, comments: comments });
       // console.log(comments, posts)
     } catch (err) { 
@@ -50,7 +60,7 @@ module.exports = {
       // Upload image to cloudinary- make option for posts without image
       
       const result = await cloudinary.uploader.upload(req.file.path);
-      console.log(result)
+      console.log("result=",result)
 
       await Post.create({
         title: req.body.title,
@@ -110,6 +120,7 @@ module.exports = {
     try {
       // Find post by id
       let post = await Post.findById({ _id: req.params.id });
+      console.log("post",post)
       // Delete image from cloudinary
       await cloudinary.uploader.destroy(post.cloudinaryId);
       // Delete post from db
@@ -117,6 +128,7 @@ module.exports = {
       console.log("Deleted Post");
       res.redirect("/profile");
     } catch (err) {
+      console.log(err)
       res.redirect("/profile");
     }
   },
