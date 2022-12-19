@@ -8,6 +8,12 @@
 	--error-color: #d9534f;
 }
 
+ /* ul li::marker {
+	color:red !important;
+	list-style-type: none;
+	
+} */
+
 * {
 	box-sizing: border-box;
 	margin: 0;
