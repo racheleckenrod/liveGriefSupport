@@ -1,6 +1,7 @@
 const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 const Comment = require("../models/Comment");
+const User = require("../models/User");
 
 // const { post } = require("../routes/main");
 
@@ -14,14 +15,33 @@ module.exports = {
       console.log(err);
     }
   },
-  showProfile: async (user, res) => {
+  showProfile: async (req, res) => {
+    // try {
+      console.log("showprofile", req.params)
     try {
-      const posts = await Post.find({ user: req.user.id });
-      const likedPosts = await Post.find({ user: req.user.id }).sort({likes: "desc"}).lean();
-      res.render("profile.ejs", { posts: posts, user: req.user, likedPosts: likedPosts });
+      // const { id } = req.params.id
+      const chatUser = await User.findOne( { _id: req.params.id } )
+      console.log("yessss",chatUser,"KOKOK")
+      const posts = await Post.find({ user: chatUser }).populate('user');
+      // console.log("yep", posts, "yoyoyo")
+      const likedPosts = await Post.find({ user: chatUser}).sort({likes: "desc"}).lean();
+
+      const comments = await Comment.find().populate('user').sort({ createdAt: "asc" }).lean()
+      // console.log(likedPosts.length, comments.length, "length of likedPost and comments")
+      res.render("userProfile.ejs", { posts: posts, user: req.user, chatUser: chatUser, comments: comments, likedPosts: likedPosts });
     } catch (err) {
-      console.log(err);
+      console.log(err, "STOP!!");
     }
+
+
+
+
+    //   const posts = await Post.find({ user: req.user.id });
+    //   const likedPosts = await Post.find({ user: req.user.id }).sort({likes: "desc"}).lean();
+    //   res.render("profile.ejs", { posts: posts, user: req.user, likedPosts: likedPosts });
+    // } catch (err) {
+    //   console.log(err);
+    // }
 
   },
   getFeed: async (req, res) => {

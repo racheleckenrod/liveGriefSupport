@@ -26,7 +26,7 @@
             <h5>Likes: <%= posts[i].likes %></h5>
           </div>
           <div class="actions">
-            Posted by:<a href="/<%= `getProfile?user= ${posts[i].user.userName}`%>"><%= posts[i].user.userName%>
+            Posted by:<a href="/Profile/<%= `${posts[i].user._id}`%>"><%= posts[i].user.userName%>
             </a>
           </div>
               <h4>Comments:</h4>
