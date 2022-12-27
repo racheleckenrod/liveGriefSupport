@@ -89,8 +89,8 @@ app.use("/", mainRoutes);
 app.use("/post", postRoutes);
 app.use("/comment", commentRoutes);
 app.use("/chat", chatRoutes);
-app.get("/chat",(req, res) => 
-render('lobby.ejs', {  }))
+// app.get("/chat",(req, res) => 
+// render('lobby.ejs', {  }))
 
 //Server Running
 app.listen(process.env.PORT, () => {
