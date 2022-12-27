@@ -2496,6 +2496,7 @@ input, select, textarea {
 
 	#navPanel, #titleBar {
 		display: none;
+		overflow-x: scroll;
 	}
 
 	@media screen and (max-width: 980px) {
@@ -2674,6 +2675,7 @@ input, select, textarea {
 				height: 100%;
 				left: 0;
 				overflow-y: auto;
+				overflow-x: scroll;
 				position: fixed;
 				top: 0;
 				width: 275px;
@@ -2687,6 +2689,7 @@ input, select, textarea {
 					color: rgba(255, 255, 255, 0.5);
 					text-transform: uppercase;
 					text-decoration: none;
+					overflow-x: scroll;
 					font-size: 0.85em;
 					letter-spacing: 0.15em;
 					text-decoration: none;
