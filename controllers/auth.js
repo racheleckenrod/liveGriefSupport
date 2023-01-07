@@ -127,6 +127,7 @@ exports.postSignup = (req, res, next) => {
 // }
 
 exports.postFeedback = (req, res, next) => {
+  console.log("exports.postFeedback")
   const validationErrors = [];
   if (!validator.isEmail(req.body.email))
     validationErrors.push({ msg: "Please enter a valid email address." });
@@ -138,7 +139,7 @@ exports.postFeedback = (req, res, next) => {
 
   if (validationErrors.length) {
     req.flash("errors", validationErrors);
-    return res.redirect("/");
+    return res.redirect("/#");
   }
   req.body.email = validator.normalizeEmail(req.body.email, {
     gmail_remove_dots: false,
@@ -146,16 +147,17 @@ exports.postFeedback = (req, res, next) => {
 
   if (req.user || req.guest){
     console.log("what's next?")
-    return next();
+    // return next();
     
   }
 
-  const guest = new Guest({
-    guestName: req.body.userName,
-    email: req.body.email,
-  });
-
+  // const guest = new Guest({
+  //   guestName: req.body.userName,
+  //   email: req.body.email,
+  // });
+console.log("?????????")
   guest.save((err) => {
+    console.log("saveguest", guest)
     if (err) {
       return next(err);
     }
